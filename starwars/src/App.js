@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Person from './components/Person';
+import styled from 'styled-components';
 import './App.css';
 
 const App = () => {
@@ -23,12 +24,22 @@ const App = () => {
 
   if (!peopleData) return <h3>Fetching data...</h3>
 
+  const PersonContainer = styled.div`
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: flex-start;
+  `
+
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      {peopleData.results.map(person => {
+      <PersonContainer>
+        {peopleData.results.map(person => {
         return <Person person={person} key={person.name}/>
       })}
+      </PersonContainer>
     </div>
   );
 }
