@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Person from './components/Person';
 import './App.css';
 
 const App = () => {
@@ -15,15 +16,22 @@ const App = () => {
   useEffect(() => {
     axios.get('https://swapi.co/api/people/')
       .then(response => {
-        console.log(response);
+        // console.log(response.data);
         setPeopleData(response.data);
       })
       .catch(err => console.log(err))
   }, [])
 
+  if (!peopleData) return <h3>Fetching data...</h3>
+
+  // console.log(peopleData);
+
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      {peopleData.results.map(person => {
+        return <Person person={person} key={person.name}/>
+      })}
     </div>
   );
 }
