@@ -7,12 +7,13 @@ function Person(props) {
       margin: 0 15px 20px;
       background-color: #f0f0f0;
       border-radius: 7px;
+      box-shadow: 0 0 20px 5px #dee3e8;
    `
 
    const Name = styled.h2`
       margin: 0;
       padding: 14px 0;
-      background: goldenrod;
+      background: #87b3dc;
       border-radius: inherit;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
