@@ -16,15 +16,12 @@ const App = () => {
   useEffect(() => {
     axios.get('https://swapi.co/api/people/')
       .then(response => {
-        // console.log(response.data);
         setPeopleData(response.data);
       })
       .catch(err => console.log(err))
   }, [])
 
   if (!peopleData) return <h3>Fetching data...</h3>
-
-  // console.log(peopleData);
 
   return (
     <div className="App">
