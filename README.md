@@ -26,13 +26,24 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+React JS is a Javascript library for building user interfaces. It uses small, modular pieces of code called components to compose complex web applications. Components combine markup and JS functionality into discrete packages that can be reused across applications and are easier to debug - separating concerns instead of separating technologies.  React is declarative, which makes code more easily understood. It uses a virtual DOM which reduces DOM operations and improves performance. It's also flexible and unopinionated, allowing you to use it with other libraries and frameworks.
+
 - [ ] What does it mean to _think_ in react?
+
+Thinking in React means thinking in terms of components and how those components need to pass along data between each other via state and props. React has a one-way data flow, so data flows one way from parent componenets to child components. Components are set up in a hierarchy based on the appearance and flow of the UI. 
 
 - [ ] Describe state.
 
+State is data that changes over time and lives on the component one level higher than the child components that rely on the state. State cannot be changed directly - a setter function must be used to change it.
+
+
 - [ ] Describe props.
 
+Props (short for properties) are a way of passing data from parent to child - this data is read-only and doesn't change. Props are passed by setting them as attributes on a component in its parent and called by passing the `props` keyword into the child component function as a parameter. 
+
 - [ ] What are side effects, and how do you sync effects in a React component to state or prop changes?
+
+Side effects are anything that interacts with something outside the local function. Examples include data fetching (API requests), manipulating the DOM, mutating non-local variables, and setting up subscriptions. To sync effects to state or props changes in a React component, you use the Effect hook (`useEffect()`) and pass in the state/props that the effect depends on in an array as the second argument. The first argument is a callback that runs every time the specified state/props changes (or every time the page renders, if none are specified).
 
 ## Project Set Up
 

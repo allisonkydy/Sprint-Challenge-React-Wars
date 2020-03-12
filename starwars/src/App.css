@@ -6,3 +6,26 @@
   text-shadow: 1px 1px 5px #fff;
 }
 /* write your parent styles in here for your App.js */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1 {
+  font-size: 3.6rem;
+}
+
+h2 {
+  font-size: 2.0rem;
+}
+
+h1, h2, button {
+  font-family: 'Michroma', sans-serif;
+}
+
+li {
+  font-size: 1.4rem
+}
